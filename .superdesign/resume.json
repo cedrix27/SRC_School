@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "targets": {
+    "/dashboard": {
+      "targetKind": "new-ui",
+      "projectId": "276ae9a5-0240-4920-873c-0fc2c049b537",
+      "activeDraftId": "9255e0cf-2d36-4f3e-bc3b-9a946d1d55bf",
+      "designSystemPath": ".superdesign/design-system.md",
+      "referenceIds": ["4e4780d1-e255-4233-ab0c-aaf9fc841248"],
+      "contextFiles": [".superdesign/design-system.md"],
+      "fingerprints": {
+        ".superdesign/design-system.md": "5f2f236ffc2255438e414c9cf70c7da984f0ac858d29cfccc3dbbeb259c49598"
+      },
+      "components": [],
+      "drafts": {
+        "9255e0cf-2d36-4f3e-bc3b-9a946d1d55bf": {
+          "title": "SRC SCHOOL Dashboard",
+          "visualDirection": "Références design locales : cartes claires arrondies, DM Sans, accents violet vert orange, semaine scolaire",
+          "currentVersion": 1
+        }
+      },
+      "updatedAt": "2026-09-15T10:29:54.561Z"
+    }
+  }
+}

@@ -6,7 +6,7 @@ async function proxy(request: NextRequest, context: { params: Promise<{ path: st
     const origin = request.headers.get('origin');
     if (origin && origin !== request.nextUrl.origin) return Response.json({ detail: 'Origine de requête refusée.' }, { status: 403 });
   }
-  const target = new URL('/api/' + path.map(encodeURIComponent).join('/'), process.env.API_URL || 'http://127.0.0.1:8000');
+  const target = new URL('/api/' + path.map(encodeURIComponent).join('/'), process.env.API_URL || 'http://127.0.0.1:8010');
   target.search = request.nextUrl.search;
   const headers = new Headers();
   for (const name of ['content-type', 'cookie', 'authorization', 'idempotency-key', 'x-csrf-token']) {

@@ -60,7 +60,7 @@ class SrcSchoolApp extends StatelessWidget {
 class Api {
   final storage = const FlutterSecureStorage();
   final base = const String.fromEnvironment('API_URL',
-      defaultValue: 'http://127.0.0.1:8000/api/v1');
+      defaultValue: 'http://127.0.0.1:8010/api/v1');
 
   Future<Map<String, dynamic>> login(String email, String password) async {
     final response = await http.post(Uri.parse('$base/auth/login'),

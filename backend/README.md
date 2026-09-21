@@ -9,7 +9,7 @@ export DATABASE_URL='postgresql+psycopg://src:src@127.0.0.1:5432/src_school'
 .venv/bin/python -m app.migrate
 # Optionnel : définir DEMO_PASSWORD (10 caractères minimum), puis
 .venv/bin/python -m app.seed
-.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8000
+.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8010
 ```
 
 OpenAPI : `/docs`. Santé PostgreSQL : `/health`.

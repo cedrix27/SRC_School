@@ -557,7 +557,7 @@ def share(school_id: str, record_id: str, user: User = Depends(identity), db: DB
         fail('UNPUBLISHED', 'Publiez le bulletin avant partage.', 409)
     token = secrets.token_urlsafe(40)
     link = add(db, school_id, 'document-share-links', {'report_card_id': rec.id, 'token_hash': token_hash(token), 'expires_at': (now()+timedelta(days=7)).isoformat(), 'revoked': False})
-    return {'id': link.id, 'url': os.getenv('PUBLIC_API_URL', 'http://localhost:8000')+P+'/documents/shared/'+token, 'expires_at': link.data['expires_at']}
+    return {'id': link.id, 'url': os.getenv('PUBLIC_API_URL', 'http://localhost:8010')+P+'/documents/shared/'+token, 'expires_at': link.data['expires_at']}
 
 
 @app.delete(P+'/schools/{school_id}/document-share-links/{record_id}', status_code=204)

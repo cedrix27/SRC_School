@@ -22,4 +22,4 @@ Next.js admin/superadmin web ; Flutter desktop admin/comptable et mobile enseign
 
 Lire `AGENTS.md` puis les références pertinentes de `design/`. La première maquette attend une validation visuelle selon le workflow Superdesign ; l’architecture et le contrat décrivent les fonctionnalités à implémenter, pas des endpoints déjà disponibles.
 
-Pour lancer : consulter `backend/README.md`, définir `DATABASE_URL`, exécuter `make backend-migrate`, puis `DEMO_PASSWORD='...' make backend-seed`; démarrer l’API avec `cd backend && .venv/bin/uvicorn app.main:app --port 8000`, et le web avec `cd apps/web && npm run dev`.
+Pour lancer : consulter `backend/README.md`, définir `DATABASE_URL`, exécuter `make backend-migrate`, puis `DEMO_PASSWORD='...' make backend-seed`; démarrer PostgreSQL sur le port 8000, l’API avec `cd backend && .venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8010`, et le web avec `cd apps/web && npm run dev`.

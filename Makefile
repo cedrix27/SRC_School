@@ -6,9 +6,9 @@ web-install:
 web-build:
 	cd apps/web && npm run typecheck && npm run build
 backend-migrate:
-	cd backend && DATABASE_URL="$${DATABASE_URL:-postgresql+psycopg://src:src@127.0.0.1:5432/src_school}" .venv/bin/python -m app.migrate
+	cd backend && if [ -f .env ]; then set -a; . .env; set +a; fi; DATABASE_URL="$${DATABASE_URL:-postgresql+psycopg://src:src@127.0.0.1:5432/src_school}" .venv/bin/python -m app.migrate
 backend-seed:
-	cd backend && test -n "$${DEMO_PASSWORD}" && DATABASE_URL="$${DATABASE_URL:-postgresql+psycopg://src:src@127.0.0.1:5432/src_school}" .venv/bin/python -m app.seed
+	cd backend && if [ -f .env ]; then set -a; . .env; set +a; fi; test -n "$${DEMO_PASSWORD}" && DATABASE_URL="$${DATABASE_URL:-postgresql+psycopg://src:src@127.0.0.1:5432/src_school}" .venv/bin/python -m app.seed
 backend-test:
 	cd backend && TEST_DATABASE_URL="$${TEST_DATABASE_URL:-postgresql+psycopg://src:src@127.0.0.1:5432/src_school_test}" .venv/bin/pytest -q
 flutter-analyze:

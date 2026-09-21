@@ -1,7 +1,9 @@
 import os
 from datetime import datetime, timezone
+from pathlib import Path
 from uuid import uuid4
 
+from dotenv import load_dotenv
 from sqlalchemy import JSON, Boolean, DateTime, ForeignKey, Integer, String, UniqueConstraint, create_engine
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, sessionmaker
 
@@ -65,6 +67,7 @@ class Idempotency(Base):
     response: Mapped[dict] = mapped_column(JSON)
 
 
+load_dotenv(Path(__file__).resolve().parents[1] / '.env')
 DATABASE_URL = os.getenv('DATABASE_URL', 'postgresql+psycopg://src:src@127.0.0.1:5432/src_school')
 engine = create_engine(DATABASE_URL, pool_pre_ping=True)
 SessionLocal = sessionmaker(engine, expire_on_commit=False)
